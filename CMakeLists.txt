@@ -1,13 +1,11 @@
 cmake_minimum_required(VERSION 3.15)
 
-project(sync-config VERSION 0.1.0 LANGUAGES CXX)
+project("sync-config" VERSION 0.1.0 LANGUAGES CXX)
 
 find_program(GIT_EXECUTABLE NAMES git)
 
-if (NOT GIT_EXECUTABLE)
-    message(STATUS "Git found: ${GIT_EXECUTABLE}")
-else()
-    message(FATAL_ERROR "Git not found. Please install Git.")
-endif()
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+set(SYNC_CONFIG_SOURCE_DIR CMAKE_CURRENT_SOURCE_DIR)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
 add_subdirectory(src)

@@ -3,6 +3,7 @@ set(EXECUTABLE_NAME "syconf")
 add_executable(${EXECUTABLE_NAME} 
     main.cpp
     read_config.cpp
+    reload.cpp
 )
 
 install(TARGETS ${EXECUTABLE_NAME} DESTINATION bin)

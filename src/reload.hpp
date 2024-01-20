@@ -7,5 +7,6 @@
 
 void reload(const Config &config);
 void status();
+void stash();
 
 #endif	// __SYCONF_RELOAD__

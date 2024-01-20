@@ -4,6 +4,7 @@
 #include <fstream>
 #include <iostream>
 #include <filesystem>
+#include <utility>
 
 #include "JSON/json.hpp"
 
@@ -51,5 +52,15 @@ Config read_config() {
         std::cerr << "Config must contain configs with a array of strings value"  << std::endl;
         exit(EXIT_FAILURE);
     }
-    return Config(config["repository"], config["configs"]);
+
+    std::map<std::string, std::string> configs{};
+    for(auto config: config["configs"]){
+        if(!config["input"].is_string() || !config["output"].is_string()){
+            std::cerr << "Config must contain configs with a array of strings value"  << std::endl;
+            exit(EXIT_FAILURE);
+        }
+        configs[config["input"]] = config["output"];
+    }
+
+    return Config(config["repository"], configs);
 }

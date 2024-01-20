@@ -10,14 +10,15 @@
 int main(int argc, char *argv[]) {
 	Config config = read_config();
 
-	CLI::App syconf("Sync your config to repository");
-	auto *history = syconf.add_subcommand("history", "Show git log --online")
-						->callback([]() { std::system("/bin/git log"); });
-
 	if (chdir(config._path.c_str()) != 0) {
 		std::cerr << "Cannot go the the repository\n";
 		return EXIT_FAILURE;
 	}
+
+	CLI::App syconf("Sync your config to repository");
+	auto *history =
+		syconf.add_subcommand("history", "Show git log")
+			->callback([]() { std::system("/bin/git log"); });
 
 	CLI11_PARSE(syconf, argc, argv)
 	return 0;

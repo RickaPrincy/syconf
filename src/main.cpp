@@ -33,7 +33,7 @@ int main(int argc, char *argv[]) {
 		stash();
 	});
 
-	syconf.add_subcommand("push", "Stash change")->callback([&config]() {
+	syconf.add_subcommand("push", "Push change")->callback([&config]() {
 		push();
 	});
 

@@ -34,7 +34,7 @@ void commit(){
     auto current_date = std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
     std::string current_date_string = std::ctime(&current_date);
     std::system("git add --all");
-    std::string commit_message = "git commit -m " + current_date_string;
+    std::string commit_message = "git commit -m \"" + current_date_string + "\"";
     std::system(commit_message.c_str());
 }
 

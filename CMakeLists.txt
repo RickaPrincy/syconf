@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.15)
 
-project("sync-config" VERSION 0.1.0 LANGUAGES CXX)
+project("syconf" VERSION 0.1.0 LANGUAGES CXX)
 
 find_program(GIT_EXECUTABLE NAMES git)
 

@@ -1,10 +1,25 @@
-# syconf
+# syconf :zap:
 
-Sync rapidly your config to a github repository
+Sync your config to a GitHub repository rapidly.
 
-### Usage
+## Installation :seedling:
 
-Create an env 'SYCONF_PATH' to tell syconf where your config is located.
+### Dependancies
+
+- CMake (Version 3.15 or later)
+- C++ Compiler with C++17 support
+
+```bash
+bash <(curl -s https://raw.githubusercontent.com/RickaPrincy/syconf/main/install.sh)
+```
+Or you can build it manually as usual for a CMake project
+
+## Usage 
+
+- Create a local repository to store your config and link it to a remote
+- Configure all user commiter and user access for push for that repos
+- Create directory and an `json file (syconf config)`, use the following example
+- Create an environment variable named `SYCONF_PATH` to specify where your syconf config is stored.
 
 #### Example of syconf config
 
@@ -59,8 +74,9 @@ Create an env 'SYCONF_PATH' to tell syconf where your config is located.
     ]
 }
 ```
+Replace /path/to/your/config/repo with the actual path to your local repository and adjust the input and output paths according to your configuration files.
 
-### Commands
+## Available Commands
 
 - syconf reload: check and copy new config for all paths given in the config file
 - syconf commit: Commit new config (current_datetime as commit message)

@@ -3,15 +3,13 @@
 
 #include <map>
 #include <string>
-#include <vector>
 
 class Config {
 public:
 	std::string _path;
 	std::map<std::string, std::string> _include_paths;
-	explicit Config(
-		std::string path,
-		std::map<std::string, std::string> include_paths)
+	explicit Config(std::string path,
+					std::map<std::string, std::string> include_paths)
 		: _path(path), _include_paths(include_paths) {}
 
 	Config operator=(const Config &other) {

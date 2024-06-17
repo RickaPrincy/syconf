@@ -1,8 +1,6 @@
 #ifndef __SYCONF_ACTIONS__
 #define __SYCONF_ACTIONS__
 
-#include <string>
-#include <vector>
 #include "config.hpp"
 
 void reload(const Config &config);

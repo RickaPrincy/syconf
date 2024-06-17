@@ -4,9 +4,9 @@
 #include <iostream>
 
 #include "CLI/CLI11.hpp"
+#include "actions.hpp"
 #include "config.hpp"
 #include "read_config.hpp"
-#include "actions.hpp"
 
 int main(int argc, char *argv[]) {
 	Config config = read_config();
@@ -21,9 +21,9 @@ int main(int argc, char *argv[]) {
 	syconf.add_subcommand("history", "Show git log")->callback([]() {
 		std::system("git log");
 	});
-	
-    syconf.add_subcommand("commit", "Commit changes")->callback([]() {
-        commit();
+
+	syconf.add_subcommand("commit", "Commit changes")->callback([]() {
+		commit();
 	});
 
 	syconf.add_subcommand("reload", "Retrieve config show git status")
